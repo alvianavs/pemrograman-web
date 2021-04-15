@@ -2,10 +2,10 @@
 include 'header.php';
 include 'navbar.php';
 ?>
-    <div class="container bg-primary my-4 rounded">
+    <div class="container bg-info bg-gradient my-4 rounded">
         <div class="p-3">
             <br>
-            <h2 class="text-light text-center">Selamat datang<br>
+            <h1 class="text-dark text-center">Selamat datang<br>
                 <svg xmlns="http://www.w3.org/2000/svg" style="width: 35px; height: auto;" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
                 </svg>
@@ -13,13 +13,13 @@ include 'navbar.php';
                 <svg xmlns="http://www.w3.org/2000/svg" style="width: 35px; height: auto;" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
                 </svg>
-            </h2><br>
-            <div class="border border-1"></div>
-            <h3 class="my-3 text-light text-center">Menu Utama</h3>
+            </h1><br>
+            <div class="border border-2 border-primary"></div>
+            <h3 class="my-3 text-dark text-center">Menu Utama</h3>
 
             <div class="row mb-3">
                 <div class="col d-flex justify-content-center">
-                    <div class="card" style="width: 17rem;">
+                    <div class="card shadow" style="width: 17rem;">
                         <div class="mt-3 d-flex justify-content-center">
                             <div class="d-flex justify-content-center rounded-circle bg-primary" style="width: 100px; height:auto;">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="py-3 text-white" style="width: 60px; height:auto;" viewBox="0 0 20 20" fill="currentColor">
@@ -27,7 +27,7 @@ include 'navbar.php';
                                 </svg>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h5 class="card-title">DATA ANGGOTA</h5>
                             <p class="card-text">Mengelola data - data anggota</p>
                             <a href="anggota/index.php" class="btn btn-sm btn-success">Ke Halaman</a>
@@ -35,7 +35,7 @@ include 'navbar.php';
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center">
-                    <div class="card" style="width: 17rem;">
+                    <div class="card shadow" style="width: 17rem;">
                         <div class="mt-3 d-flex justify-content-center">
                             <div class="d-flex justify-content-center rounded-circle bg-primary" style="width: 100px; height:auto;">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="py-3 text-white" style="width: 60px; height: auto;" viewBox="0 0 20 20" fill="currentColor">
@@ -43,7 +43,7 @@ include 'navbar.php';
                                 </svg>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h5 class="card-title">DATA PEMINJAMAN</h5>
                             <p class="card-text">Mengelola data peminjaman buku oleh anggota</p>
                             <a href="pinjam/index.php" class="btn btn-sm btn-success">Ke Halaman</a>
@@ -51,7 +51,7 @@ include 'navbar.php';
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center">
-                    <div class="card" style="width: 17rem;">
+                    <div class="card shadow" style="width: 17rem;">
                         <div class="mt-3 d-flex justify-content-center">
                             <div class="d-flex justify-content-center rounded-circle bg-primary" style="width: 100px; height:auto;">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="py-3 text-white" style="width: 60px; height: auto;" viewBox="0 0 20 20" fill="currentColor">
@@ -59,7 +59,7 @@ include 'navbar.php';
                                 </svg>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h5 class="card-title">DATA BUKU</h5>
                             <p class="card-text">Mengelola data - data buku</p>
                             <a href="buku/index.php" class="btn btn-sm btn-success">Ke Halaman</a>

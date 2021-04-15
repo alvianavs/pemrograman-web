@@ -55,7 +55,7 @@ $data = mysqli_query($konek, $sql);
             </form>
         </div>
     </div>
-    <table class="table table-striped border border-light">
+    <table class="table table-striped border border-light shadow">
         <thead class="bg-primary">
             <tr class="text-light" style="border-style: hidden !important;">
                 <th scope="col">No</th>
