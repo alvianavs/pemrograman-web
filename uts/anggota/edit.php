@@ -21,7 +21,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <div class="mb-3 row">
                 <label for="nrp" class="col-sm-2 col-form-label">NRP</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" name="nrp" value="<?= $nrp ?>" min="10" max="10" required>
+                    <input type="number" class="form-control" name="nrp" value="<?= $nrp ?>" required>
                 </div>
             </div>
             <div class="mb-3 row">
