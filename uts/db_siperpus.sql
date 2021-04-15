@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2021 at 10:29 AM
+-- Generation Time: Apr 15, 2021 at 10:32 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -20,6 +20,49 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_siperpus`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_anggota`
+--
+
+CREATE TABLE `tb_anggota` (
+  `nrp` varchar(10) NOT NULL,
+  `nama` varchar(191) NOT NULL,
+  `tgl_lahir` date NOT NULL,
+  `alamat` varchar(191) NOT NULL,
+  `no_hp` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_anggota`
+--
+
+INSERT INTO `tb_anggota` (`nrp`, `nama`, `tgl_lahir`, `alamat`, `no_hp`) VALUES
+('3120510401', 'Budi', '2000-02-02', 'Ponorogo', '082352415331'),
+('3120510407', 'Avis Alvian', '2001-08-28', 'Ponorogo', '089327742991');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_buku`
+--
+
+CREATE TABLE `tb_buku` (
+  `kode` varchar(10) NOT NULL,
+  `judul` varchar(191) NOT NULL,
+  `pengarang` varchar(191) NOT NULL,
+  `penerbit` varchar(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_buku`
+--
+
+INSERT INTO `tb_buku` (`kode`, `judul`, `pengarang`, `penerbit`) VALUES
+('AD555', 'Belajar PHP ', 'programmer', 'admin'),
+('HHSD555', 'Sebuah Judul', 'Pengarang', 'Penerbit');
 
 -- --------------------------------------------------------
 
@@ -45,6 +88,18 @@ INSERT INTO `tb_pinjam` (`id_pinjam`, `nrp_mhs`, `kode_buku`, `tgl_pinjam`) VALU
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tb_anggota`
+--
+ALTER TABLE `tb_anggota`
+  ADD PRIMARY KEY (`nrp`);
+
+--
+-- Indexes for table `tb_buku`
+--
+ALTER TABLE `tb_buku`
+  ADD PRIMARY KEY (`kode`);
 
 --
 -- Indexes for table `tb_pinjam`
