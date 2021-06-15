@@ -10,7 +10,7 @@ $result = mysqli_query($konek, $sql);
     <br>
     <h2>Data Peminjaman Buku</h2>
 
-    <div class="card card-body">
+    <div class="p-4">
         <form action="insert.php" method="POST">
 
             <div class="mb-3 row">

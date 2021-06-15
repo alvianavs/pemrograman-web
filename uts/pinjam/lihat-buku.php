@@ -13,7 +13,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 ?>
 
 <body class="bg-dark">
-    <div class="col-lg-6 mx-auto mt-5 card card-body">
+    <br><br><br>
+    <div class="col-lg-6 mx-auto card card-body">
         <h4 class="mb-4">Lihat Data Buku</h4>
         <table class="table">
             <tbody>

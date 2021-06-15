@@ -14,7 +14,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 ?>
 
 <body class="bg-dark">
-    <div class="col-lg-6 mx-auto mt-5 card card-body">
+    <br><br><br>
+    <div class="col-lg-6 mx-auto card card-body">
         <form action="update.php?nrp=<?= $nrp ?>" method="POST">
             <h4 class="mb-3">Update data anggota</h4>
 
