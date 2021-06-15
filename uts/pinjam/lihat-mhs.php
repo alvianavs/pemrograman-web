@@ -41,7 +41,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             </tbody>
         </table>
         <div class="d-flex justify-content-end">
-            <a href="/pemrograman-web/uts/pinjam/index.php" class="btn btn-warning mx-3">
+            <a href="/pemrograman-web/uts/pinjam/main.php" class="btn btn-warning mx-3">
                 Kembali
             </a>
         </div>

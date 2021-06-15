@@ -49,7 +49,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
             </div>
             <div class="d-flex justify-content-end">
-                <a href="/pemrograman-web/uts/anggota/index.php" class="btn btn-warning mx-3">
+                <a href="/pemrograman-web/uts/anggota/main.php" class="btn btn-warning mx-3">
                     Kembali
                 </a>
                 <button class="btn btn-success" type="submit" name="update">

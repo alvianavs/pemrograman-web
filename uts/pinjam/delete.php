@@ -8,7 +8,7 @@ if (isset($_GET['id_pinjam']))
     
     $result = mysqli_query($konek, $sql);
     if ($result) {
-        header("location:index.php");
+        header("location:main.php");
     } else {
         echo "Please check your query";
     }

@@ -13,9 +13,9 @@ if (isset($_POST['submit']))
     $result = mysqli_query($konek, $sql);
 
     if ($result)
-        header("location:index.php");
+        header("location:main.php");
     else
         echo "Please check your query";
 } else {
-    header("location:index.php");
+    header("location:main.php");
 }

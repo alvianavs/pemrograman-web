@@ -9,7 +9,7 @@ if (isset($_GET['kode']))
     $result = mysqli_query($konek, $sql);
 
     if ($result) {
-        header("location:index.php");
+        header("location:main.php");
     } else {
         echo "Please check your query";
     }
