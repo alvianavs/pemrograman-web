@@ -3,7 +3,7 @@ if (!session_id()) {
     session_start();
 }
 $basename = substr(strtolower(basename($_SERVER['PHP_SELF'])), 0, strlen(basename($_SERVER['PHP_SELF'])) - 4);
-if ((empty($_SESSION['fb_id'])) && ($basename != "index")) {
+if ((empty($_SESSION['is_login'])) && ($basename != "index")) {
     header('Location: /pemrograman-web/uts/index.php');
     exit;
 }

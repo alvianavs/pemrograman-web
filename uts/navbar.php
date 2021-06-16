@@ -25,7 +25,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="/pemrograman-web/uts/profile.php">Profile</a>
+                    <a class="nav-link text-light" href="/pemrograman-web/uts/user/profile.php">Profile</a>
                 </li>
             </ul>
             <?php

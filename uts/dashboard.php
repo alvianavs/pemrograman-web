@@ -67,18 +67,5 @@ include 'navbar.php';
             </div>
         </div>
     </div>
-    <h3>User Info</h3>
-    <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-            <a class="nav-link">Facebook ID: <?php echo  $_SESSION['fb_id']; ?></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link">Full Name: <?php echo $_SESSION['fb_name']; ?></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link">Email: <?php echo $_SESSION['fb_email']; ?></a>
-        </li>
-    </ul>
-
 </div>
 <?php include 'footer.php'; ?>
