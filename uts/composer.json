@@ -1,14 +1,7 @@
 {
-    "name": "owner/uts",
-    "description": "Pemrograman Web",
-    "authors": [
-        {
-            "name": "Avis Alvian",
-            "email": "avisalvian44@gmail.com"
-        }
-    ],
-    "require": 
-    {
-        "facebook/graph-sdk" : "~5.0"
+    "require": {
+        "google/auth": "^1.15",
+        "google/apiclient": "^2.9",
+        "facebook/graph-sdk": "~5.0"
     }
 }

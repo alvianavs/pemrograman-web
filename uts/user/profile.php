@@ -30,6 +30,28 @@ include '../navbar.php';
                 </table>
             </div>
         </div>
+    <?php elseif (isset($_SESSION['gu_first_name'])) : ?>
+        <div class="card col-md-6">
+            <div class="mx-auto mt-3">
+                <div class="w-100">
+                    <img src="<?= $_SESSION['gu_image']; ?>" alt="">
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="width:150px">Nama</th>
+                            <td>: <?= $_SESSION['gu_first_name'] . " " . $_SESSION['gu_last_name']; ?></td>
+                        </tr>
+                        <tr>
+                            <th style="width:150px">Google Email</th>
+                            <td>: <?= $_SESSION['gu_email']; ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     <?php else :
         include '../koneksi.php';
 

@@ -1,15 +1,10 @@
 <?php
 
-require_once 'config.php';
+require_once 'config_google.php';
 
-unset($_SESSION['facebook_access_token']);
-
-
-unset($_SESSION['fb_id']);
-unset($_SESSION['fb_name']);
-unset($_SESSION['fb_email']);
-unset($_SESSION['fb_pic']);
-unset($_SESSION['is_login']);
-
+$accesstoken = $_SESSION['access_token'];
+$google_client->revokeToken($accesstoken);
+ 
+session_destroy();
 
 header("Location:index.php");

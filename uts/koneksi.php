@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $psw = "";
-$dbname = "db_siperpus";
+$dbname = "uts_siperpus";
 
 $konek = mysqli_connect($host, $user, $psw, $dbname);
 

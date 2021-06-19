@@ -11,6 +11,7 @@ $result = mysqli_query($konek, $sql);
     <h2>Data Peminjaman Buku</h2>
 
     <div class="p-4">
+        
         <form action="insert.php" method="POST">
 
             <div class="mb-3 row">
@@ -79,7 +80,7 @@ $result = mysqli_query($konek, $sql);
                 <th scope="col">Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="bg-light">
             <?php
             $i = 1;
             if (mysqli_num_rows($result) > 0) {

@@ -60,7 +60,7 @@ $data = mysqli_query($konek, $sql);
                 <th scope="col">Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="bg-light">
             <?php
             $i = 1;
             if (mysqli_num_rows($data) > 0) {
