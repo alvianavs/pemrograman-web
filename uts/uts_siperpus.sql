@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2021 at 10:32 AM
+-- Generation Time: Jun 22, 2021 at 05:48 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_siperpus`
+-- Database: `uts_siperpus`
 --
 
 -- --------------------------------------------------------
@@ -35,14 +35,6 @@ CREATE TABLE `tb_anggota` (
   `no_hp` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `tb_anggota`
---
-
-INSERT INTO `tb_anggota` (`nrp`, `nama`, `tgl_lahir`, `alamat`, `no_hp`) VALUES
-('3120510401', 'Budi', '2000-02-02', 'Ponorogo', '082352415331'),
-('3120510407', 'Avis Alvian', '2001-08-28', 'Ponorogo', '089327742991');
-
 -- --------------------------------------------------------
 
 --
@@ -56,13 +48,45 @@ CREATE TABLE `tb_buku` (
   `penerbit` varchar(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `tb_buku`
+-- Table structure for table `tb_fb_user`
 --
 
-INSERT INTO `tb_buku` (`kode`, `judul`, `pengarang`, `penerbit`) VALUES
-('AD555', 'Belajar PHP ', 'programmer', 'admin'),
-('HHSD555', 'Sebuah Judul', 'Pengarang', 'Penerbit');
+CREATE TABLE `tb_fb_user` (
+  `fb_id` varchar(25) NOT NULL,
+  `fullname` varchar(191) NOT NULL,
+  `email` varchar(191) NOT NULL,
+  `picture` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_fb_user`
+--
+
+INSERT INTO `tb_fb_user` (`fb_id`, `fullname`, `email`, `picture`) VALUES
+('1135810060272385', 'Alvian Avis', 'progamers5567@gmail.com', 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1135810060272385&height=200&ext=1626662994&hash=AeRIhRy71_-hwSNs6Pw');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_google_user`
+--
+
+CREATE TABLE `tb_google_user` (
+  `google_id` varchar(25) NOT NULL,
+  `fullname` varchar(191) NOT NULL,
+  `email` varchar(191) NOT NULL,
+  `picture` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_google_user`
+--
+
+INSERT INTO `tb_google_user` (`google_id`, `fullname`, `email`, `picture`) VALUES
+('109766920699834431555', 'Avis Alvian', 'avisalvian44@gmail.com', 'https://lh3.googleusercontent.com/a-/AOh14Gi04YZByDJHvlY0uIVrS1JljzNCAS76eAUEaXb31A=s96-c');
 
 -- --------------------------------------------------------
 
@@ -77,13 +101,18 @@ CREATE TABLE `tb_pinjam` (
   `tgl_pinjam` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `tb_pinjam`
+-- Table structure for table `tb_user`
 --
 
-INSERT INTO `tb_pinjam` (`id_pinjam`, `nrp_mhs`, `kode_buku`, `tgl_pinjam`) VALUES
-(6, '3120510401', 'AD555', '2021-04-03'),
-(7, '3120510401', 'HHSD555', '2021-03-15');
+CREATE TABLE `tb_user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(191) NOT NULL,
+  `password` varchar(191) NOT NULL,
+  `email` varchar(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -102,12 +131,30 @@ ALTER TABLE `tb_buku`
   ADD PRIMARY KEY (`kode`);
 
 --
+-- Indexes for table `tb_fb_user`
+--
+ALTER TABLE `tb_fb_user`
+  ADD PRIMARY KEY (`fb_id`);
+
+--
+-- Indexes for table `tb_google_user`
+--
+ALTER TABLE `tb_google_user`
+  ADD PRIMARY KEY (`google_id`);
+
+--
 -- Indexes for table `tb_pinjam`
 --
 ALTER TABLE `tb_pinjam`
   ADD PRIMARY KEY (`id_pinjam`),
-  ADD KEY `FK_nrp_mhs` (`nrp_mhs`),
-  ADD KEY `FK_kode_buku` (`kode_buku`);
+  ADD KEY `FK_kode_buku` (`kode_buku`),
+  ADD KEY `FK_nrp_mhs` (`nrp_mhs`);
+
+--
+-- Indexes for table `tb_user`
+--
+ALTER TABLE `tb_user`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -117,7 +164,13 @@ ALTER TABLE `tb_pinjam`
 -- AUTO_INCREMENT for table `tb_pinjam`
 --
 ALTER TABLE `tb_pinjam`
-  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_user`
+--
+ALTER TABLE `tb_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -128,7 +181,7 @@ ALTER TABLE `tb_pinjam`
 --
 ALTER TABLE `tb_pinjam`
   ADD CONSTRAINT `FK_kode_buku` FOREIGN KEY (`kode_buku`) REFERENCES `tb_buku` (`kode`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_nrp_mhs` FOREIGN KEY (`nrp_mhs`) REFERENCES `tb_anggota` (`NRP`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_nrp_mhs` FOREIGN KEY (`nrp_mhs`) REFERENCES `tb_anggota` (`nrp`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
