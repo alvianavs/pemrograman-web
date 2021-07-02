@@ -1,10 +1,12 @@
 <?php
 
-require_once 'config_google.php';
+session_start();
+unset($_SESSION['is_login']);
+unset($_SESSION['is_login_google']);
+unset($_SESSION['username']);
+unset($_SESSION['email']);
+unset($_SESSION['picture']);
 
-$accesstoken = $_SESSION['access_token'];
-$google_client->revokeToken($accesstoken);
- 
 session_destroy();
 
 header("Location:index.php");

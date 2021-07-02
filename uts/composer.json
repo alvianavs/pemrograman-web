@@ -1,7 +1,5 @@
 {
     "require": {
-        "google/auth": "^1.15",
-        "google/apiclient": "^2.9",
         "facebook/graph-sdk": "~5.0"
     }
 }

@@ -3,7 +3,6 @@ include 'header.php';
 include 'navbar.php';
 
 require_once 'fb_init.php';
-require_once 'google_init.php';
 
 $quotes = [
     'Some books leave us free and some books make us free.',
@@ -32,7 +31,7 @@ $author = [
                     <h4 class="alert-heading">Well done!</h4>
                     <p><?= $_SESSION['pesan']; ?></p>
                 </div>
-            <?php
+                <?php
                 unset($_SESSION['pesan']);
             }
             if (isset($_SESSION['pesan_error'])) { ?>
@@ -44,7 +43,7 @@ $author = [
                         <?= $_SESSION['pesan_error']; ?>
                     </div>
                 </div>
-            <?php
+                <?php
                 unset($_SESSION['pesan_error']);
             }
             ?>
@@ -99,59 +98,59 @@ $author = [
             <a href="<?= $fb_login_url ?>" class="btn btn-primary col-md-9 shadow">
                 <img src="img/fb-ico-removebg-preview.png" style="width: 33px;">
                 Masuk dengan <b>Facebook</b></a>
-            <a href="<?= $google_login_url ?>" class="btn btn-light mt-3 col-md-9 shadow">
-                <img src="img/google-removebg-preview.png" style="width: 33px;">
-                Masuk dengan <b class="text-primary">Google</b></a>
+                <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=423104871324-rokljr4nev5mrd1g3fm24hpqcqiq1eov.apps.googleusercontent.com&redirect_uri=http://localhost/pemrograman-web/uts/google-auth.php&scope=profile email openid&response_type=code&access_type=offline&include_granted_scopes=true" class="btn btn-light mt-3 col-md-9 shadow">
+                    <img src="img/google-removebg-preview.png" style="width: 33px;">
+                    Masuk dengan <b class="text-primary">Google</b></a>
 
-        </div>
-        <div class="col-md">
-            <div class="col-md-6 mt-3 float-end">
-                <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <?php
-                        $i = 0;
-                        while ($i < count($quotes)) { ?>
-                            <div class="carousel-item <?php echo ($i == 0) ? "active" : "" ?>">
-                                <figure class="text-center fw-bold">
-                                    <blockquote class="blockquote">
-                                        <q><?= $quotes[$i] ?></q>
-                                    </blockquote>
-                                    <figcaption class="blockquote-footer">
-                                        <?= $author[$i] ?>
-                                    </figcaption>
-                                </figure>
+                </div>
+                <div class="col-md">
+                    <div class="col-md-6 mt-3 float-end">
+                        <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <?php
+                                $i = 0;
+                                while ($i < count($quotes)) { ?>
+                                    <div class="carousel-item <?php echo ($i == 0) ? "active" : "" ?>">
+                                        <figure class="text-center fw-bold">
+                                            <blockquote class="blockquote">
+                                                <q><?= $quotes[$i] ?></q>
+                                            </blockquote>
+                                            <figcaption class="blockquote-footer">
+                                                <?= $author[$i] ?>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <?php
+                                    $i++;
+                                }
+                                ?>
                             </div>
-                        <?php
-                            $i++;
-                        }
-                        ?>
-                    </div>
 
-                    <button class="position-absolute carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                        <span class="visually-hidden carousel-control-prev-icon" aria-hidden="true"></span>
-                    </button>
-                    <button class="position-absolute carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                        <span class="visually-hidden carousel-control-next-icon" aria-hidden="true"></span>
-                    </button>
+                            <button class="position-absolute carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="visually-hidden carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <button class="position-absolute carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="visually-hidden carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<script>
-    function switchForm() {
-        var formLogin = document.getElementById("form-login");
-        var formDaftar = document.getElementById("form-register");
+        <script>
+            function switchForm() {
+                var formLogin = document.getElementById("form-login");
+                var formDaftar = document.getElementById("form-register");
 
-        if (formLogin.className !== "visually-hidden") {
-            formLogin.classList.add("visually-hidden");
-            formDaftar.classList.remove("visually-hidden");
-        } else {
-            formLogin.classList.remove("visually-hidden");
-            formDaftar.classList.add("visually-hidden");
-        }
-    }
-</script>
-<?php
-include 'footer.php';
-?>
+                if (formLogin.className !== "visually-hidden") {
+                    formLogin.classList.add("visually-hidden");
+                    formDaftar.classList.remove("visually-hidden");
+                } else {
+                    formLogin.classList.remove("visually-hidden");
+                    formDaftar.classList.add("visually-hidden");
+                }
+            }
+        </script>
+        <?php
+        include 'footer.php';
+    ?>
